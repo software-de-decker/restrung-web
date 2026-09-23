@@ -12,7 +12,7 @@ A personal tennis string tracking app. Keep track of your rackets, string collec
 
 ## Tech Stack
 
-- **Frontend** — Next.js, TypeScript, Tailwind CSS
+- **Frontend** — Next.js, TypeScript, SCSS
 - **Backend** — Firebase (Firestore, Authentication)
 - **Hosting** — Vercel
 - **CI/CD** — GitHub Actions
