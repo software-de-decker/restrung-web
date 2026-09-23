@@ -1,0 +1,92 @@
+// Type scale. Outputs no CSS on its own, so it can be @use'd from any component.
+// Values follow the Apple HIG text styles; adjust to match the design system.
+
+@use 'sass:map';
+
+$styles: (
+    large-title: (
+        size: 34px,
+        line-height: 41px,
+        weight: 400,
+        tracking: 0.4px,
+    ),
+    title-1: (
+        size: 28px,
+        line-height: 34px,
+        weight: 400,
+        tracking: 0.38px,
+    ),
+    title-2: (
+        size: 22px,
+        line-height: 28px,
+        weight: 400,
+        tracking: -0.26px,
+    ),
+    title-3: (
+        size: 20px,
+        line-height: 25px,
+        weight: 400,
+        tracking: -0.45px,
+    ),
+    headline: (
+        size: 17px,
+        line-height: 22px,
+        weight: 600,
+        tracking: -0.43px,
+    ),
+    body: (
+        size: 17px,
+        line-height: 22px,
+        weight: 400,
+        tracking: -0.43px,
+    ),
+    callout: (
+        size: 16px,
+        line-height: 21px,
+        weight: 400,
+        tracking: -0.31px,
+    ),
+    subheadline: (
+        size: 15px,
+        line-height: 20px,
+        weight: 400,
+        tracking: -0.23px,
+    ),
+    footnote: (
+        size: 13px,
+        line-height: 18px,
+        weight: 400,
+        tracking: -0.08px,
+    ),
+    caption-1: (
+        size: 12px,
+        line-height: 16px,
+        weight: 400,
+        tracking: 0px,
+    ),
+    caption-2: (
+        size: 11px,
+        line-height: 13px,
+        weight: 400,
+        tracking: 0.06px,
+    ),
+);
+
+@mixin style($name) {
+    @if not map.has-key($styles, $name) {
+        @error "Unknown text style '#{$name}'. Expected one of: #{map.keys($styles)}.";
+    }
+
+    $style: map.get($styles, $name);
+
+    font-size: map.get($style, size);
+    line-height: map.get($style, line-height);
+    font-weight: map.get($style, weight);
+    letter-spacing: map.get($style, tracking);
+}
+
+// Numeric values: SF Mono with fixed-width digits so columns and counters line up.
+@mixin numeric {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums slashed-zero;
+}

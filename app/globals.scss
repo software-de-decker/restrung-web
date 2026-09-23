@@ -1,0 +1,107 @@
+@use 'styles/reset';
+@use 'styles/typography' as type;
+
+:root {
+    /* COLOURS */
+    /* Palette */
+    --border: #d2d2d7;
+    --brand: #1b4332;
+    --brand-wash: #1b433214;
+    --brand-wash-strong: #1b433229;
+    --accent: #4f8f3f;
+    --danger: #b3261e;
+    --danger-wash: #b3261e14;
+    --danger-wash-strong: #b3261e29;
+
+    /* Surface */
+    --surface-100: #ffffff;
+    --surface-200: #f5f5f7;
+
+    /* Ink */
+    --ink: #1d1d1f;
+    --ink-wash: #1d1d1f0d;
+    --ink-wash-strong: #1d1d1f1a;
+    --ink-muted: #6e6e73;
+    --ink-inverse: #ffffff;
+
+    /* SPACING */
+    --space-2: 8px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+
+    /* Corner radius */
+    --radius-sm: 12px;
+    --radius-md: 24px;
+    --radius-lg: 36px;
+    --radius-full: 100px;
+
+    /* TYPOGRAPHY */
+    /* Fonts */
+    --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, sans-serif;
+    --font-mono: 'SF Mono', ui-monospace, 'JetBrains Mono', monospace;
+
+    /* Text styles */
+    --text-display: 700 40px/44px var(--font-sans);
+    --text-heading: 600 24px/30px var(--font-sans);
+    --text-subheading: 600 17px/24px var(--font-sans);
+    --text-body: 400 15px/22px var(--font-sans);
+    --text-body-small: 400 13px/18px var(--font-sans);
+    --text-caption: 500 11px/14px var(--font-sans);
+    --text-control: 600 15px/20px var(--font-sans);
+    --text-stat: 600 28px/32px var(--font-mono);
+
+    --background: #ffffff;
+    --foreground: #171717;
+
+    color-scheme: light;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-100);
+    color: var(--ink);
+}
+
+/* Text styling */
+.text-display {
+    font: var(--text-display);
+    letter-spacing: -0.02em;
+}
+
+.text-heading {
+    font: var(--text-heading);
+}
+
+.text-subheading {
+    font: var(--text-subheading);
+}
+
+.text-body {
+    font: var(--text-body);
+}
+
+.text-body-small {
+    font: var(--text-body-small);
+}
+
+.text-caption {
+    font: var(--text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.text-control {
+    font: var(--text-control);
+}
+
+.text-stat {
+    font: var(--text-stat);
+    font-variant-numeric: tabular-nums;
+}
