@@ -41,5 +41,24 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# firebase
+.firebase/
+firebase-debug.log*
+firebase-debug.*.log*
+firestore-debug.log*
+database-debug.log*
+pubsub-debug.log*
+ui-debug.log*
+emulator-data/
+.runtimeconfig.json
+
+# credentials / secrets
+*-firebase-adminsdk-*.json
+service-account*.json
+serviceAccount*.json
+credentials.json
+*.key
+*.p12
+
 # IDE
 /.idea/
